@@ -1,1 +1,30 @@
-<p>product works!</p>
+<div class="dashboard">
+  <div class="status-bar">
+    <div class="status running">Print Service: Running</div>
+    <div class="status stopped">Palletizer: Stopped</div>
+    <div class="status running">Tape Sealer: Running</div>
+  </div>
+
+  <div class="production-summary">
+    <div class="box">Cases to Produce: {{ casesToProduce }}</div>
+    <div class="box">Cases Produced: {{ casesProduced }}</div>
+    <div class="box">Cases Remaining: {{ casesRemaining }}</div>
+    <div class="box">% Remaining: {{ percentRemaining }}%</div>
+  </div>
+
+  <div class="details">
+    <p><strong>Item ID:</strong> {{ itemId }}</p>
+    <p><strong>Item Name:</strong> {{ itemName }}</p>
+    <p><strong>Lot ID:</strong> {{ lotId }}</p>
+    <p><strong>Cases Per Pallet:</strong> {{ casesPerPallet }}</p>
+    <p><strong>Pallets Produced:</strong> {{ palletsProduced }}</p>
+    <p><strong>Missing Labels:</strong> {{ missingLabels }}</p>
+    <p><strong>Current Pallet Cases:</strong> {{ currentPalletCases }}</p>
+    <p><strong>QR Code Label Required:</strong> {{ qrCodeRequired ? 'Yes' : 'No' }}</p>
+  </div>
+
+  <div class="weekly-summary">
+    <div class="box">Scheduled This Week: {{ scheduledThisWeek }}</div>
+    <div class="box">Produced This Week: {{ producedThisWeek }}</div>
+  </div>
+</div>

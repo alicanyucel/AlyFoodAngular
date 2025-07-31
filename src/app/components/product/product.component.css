@@ -1,0 +1,44 @@
+.dashboard {
+  font-family: Arial, sans-serif;
+  color: white;
+  background: #111;
+  padding: 20px;
+}
+
+.status-bar {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.status {
+  padding: 10px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.running {
+  background-color: green;
+}
+
+.stopped {
+  background-color: red;
+}
+
+.production-summary, .weekly-summary {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 0;
+}
+
+.box {
+  background: #222;
+  padding: 15px;
+  border-radius: 8px;
+  min-width: 150px;
+  text-align: center;
+}
+
+.details p {
+  margin: 5px 0;
+}
