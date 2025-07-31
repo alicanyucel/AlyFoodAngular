@@ -1,27 +1,59 @@
-# Alyfood
+# Alyfood Üretim Paneli
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.16.
+Alyfood, üretim süreçlerinizi kolayca takip edebileceğiniz modern bir Angular uygulamasıdır. Üretim durumu, haftalık özetler ve ürün detayları gibi bilgileri hızlıca görüntüleyebilirsiniz.
 
-## Development server
+## Başlangıç
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+1. Depoyu klonlayın:
+   ```bash
+   git clone <repo-url>
+   ```
+2. Bağımlılıkları yükleyin:
+   ```bash
+   npm install
+   ```
+3. Uygulamayı başlatın:
+   ```bash
+   ng serve
+   ```
+4. Tarayıcıda açın: [http://localhost:4200](http://localhost:4200)
 
-## Code scaffolding
+## Özellikler
+- Üretim durumu ve özetler
+- Ürün detayları
+- Modern ve kullanıcı dostu arayüz
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Route'lar
+- `/` : Ana üretim paneli
+- `/product` : Üretim paneli
 
-## Build
+---
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+# Alyfood Production Dashboard
 
-## Running unit tests
+Alyfood is a modern Angular app for tracking your production process. View production status, weekly summaries, and product details at a glance.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Getting Started
 
-## Running end-to-end tests
+1. Clone the repository:
+   ```bash
+   git clone <repo-url>
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Start the app:
+   ```bash
+   ng serve
+   ```
+4. Open in browser: [http://localhost:4200](http://localhost:4200)
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Features
+- Production status and summaries
+- Product details
+- Modern, user-friendly interface
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Routes
+- `/` : Main production dashboard
+- `/product` : Production dashboard
