@@ -1,0 +1,92 @@
+SAP Entegrasyonu – Genel Yapı
+SAP ile iletişim kurmak için kullanılan yöntem:
+
+SAP RFC (Remote Function Call)
+
+SAP OData Service (RESTful Web servis)
+
+IDoc (Intermediate Document)
+
+SOAP Web Servisler
+
+.NET Web API genellikle SAP OData veya SOAP Web Servis ile kolaylıkla entegre olur.
+
+🔧 1. SAP Tarafında Hazırlık
+SAP geliştiricisiyle birlikte çalışarak sana aşağıdaki bilgileri sağlaması gerekiyor:
+
+OData servis URL’si (örnek: https://sapserver.com/sap/opu/odata/sap/ZPRODUCT_SRV)
+
+Giriş bilgileri (kullanıcı adı, şifre veya token)
+
+Gerekli alanlar, veri yapısı
+
+🔧 2. .NET Web API Tarafında
+Örnek: OData ile SAP'den veri çekmek
+csharp
+Kodu kopyala
+[ApiController]
+[Route("api/[controller]")]
+public class SapProductsController : ControllerBase
+{
+    private readonly HttpClient _httpClient;
+
+    public SapProductsController(HttpClient httpClient)
+    {
+        _httpClient = httpClient;
+        var byteArray = Encoding.ASCII.GetBytes("username:password");
+        _httpClient.DefaultRequestHeaders.Authorization = 
+            new AuthenticationHeaderValue("Basic", Convert.ToBase64String(byteArray));
+    }
+
+    [HttpGet]
+    public async Task<IActionResult> GetProducts()
+    {
+        var response = await _httpClient.GetAsync("https://sapserver.com/sap/opu/odata/sap/ZPRODUCT_SRV/Products");
+        var content = await response.Content.ReadAsStringAsync();
+        return Ok(JsonConvert.DeserializeObject(content));
+    }
+}
+Alternatif: SOAP servisi kullanıyorsan Connected Services veya WSDL dosyası ile .NET'e entegre edebilirsin.
+
+🌐 3. Angular Tarafında
+Örnek Angular Servis:
+typescript
+Kodu kopyala
+@Injectable({
+  providedIn: 'root'
+})
+export class SapProductService {
+  private apiUrl = 'https://localhost:5001/api/SapProducts';
+
+  constructor(private http: HttpClient) {}
+
+  getProducts(): Observable<any> {
+    return this.http.get<any>(this.apiUrl);
+  }
+}
+Örnek Angular Component:
+typescript
+Kodu kopyala
+ngOnInit(): void {
+  this.sapProductService.getProducts().subscribe(data => {
+    this.products = data;
+  });
+}
+✅ Ekstra Güvenlik ve Performans
+SAP isteklerini doğrudan Angular yerine Web API üzerinden yapmak (güvenlik açısından daha doğrudur).
+
+SAP ile sürekli bağlantı gerekiyorsa token-based kimlik doğrulama veya OAuth kullanılabilir.
+
+Yanıtları cache’lemek için MemoryCache veya Redis düşünebilirsin.
+
+🔚 Sonuç
+SAP ↔️ .NET Web API ↔️ Angular yapısında çalışmak en sağlıklı mimaridir. SAP'den veri çekerken Web API bir köprü görevi görür. Angular sadece bu API ile konuşur.
+
+İstersen sana gerçek bir örnek proje yapısı da çıkarabilirim. SAP tarafı (OData veya SOAP) hazırsa detay verebilirsin, birlikte bir POC yapabiliriz.
+
+
+
+
+
+
+
