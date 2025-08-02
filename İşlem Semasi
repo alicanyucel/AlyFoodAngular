@@ -82,8 +82,6 @@ Yanıtları cache’lemek için MemoryCache veya Redis düşünebilirsin.
 🔚 Sonuç
 SAP ↔️ .NET Web API ↔️ Angular yapısında çalışmak en sağlıklı mimaridir. SAP'den veri çekerken Web API bir köprü görevi görür. Angular sadece bu API ile konuşur.
 
-İstersen sana gerçek bir örnek proje yapısı da çıkarabilirim. SAP tarafı (OData veya SOAP) hazırsa detay verebilirsin, birlikte bir POC yapabiliriz.
-
 
 
 
