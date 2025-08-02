@@ -21,9 +21,7 @@ Giriş bilgileri (kullanıcı adı, şifre veya token)
 Gerekli alanlar, veri yapısı
 
 🔧 2. .NET Web API Tarafında
-Örnek: OData ile SAP'den veri çekmek
-csharp
-Kodu kopyala
+Örnek: OData ile SAP'den veri çekme
 [ApiController]
 [Route("api/[controller]")]
 public class SapProductsController : ControllerBase
@@ -51,7 +49,6 @@ Alternatif: SOAP servisi kullanıyorsan Connected Services veya WSDL dosyası il
 🌐 3. Angular Tarafında
 Örnek Angular Servis:
 typescript
-Kodu kopyala
 @Injectable({
   providedIn: 'root'
 })
@@ -66,7 +63,6 @@ export class SapProductService {
 }
 Örnek Angular Component:
 typescript
-Kodu kopyala
 ngOnInit(): void {
   this.sapProductService.getProducts().subscribe(data => {
     this.products = data;
