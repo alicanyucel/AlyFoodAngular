@@ -1,30 +1,72 @@
-<div class="dashboard">
-  <div class="status-bar">
-    <div class="status running">Print Service: Running</div>
-    <div class="status stopped">Palletizer: Stopped</div>
-    <div class="status running">Tape Sealer: Running</div>
+<div class="container">
+  <div class="sidebar">
+    <button>Start Print Service</button>
+    <button>Stop Print Service</button>
+    <button>Start Production</button>
+    <button style="background-color: #cc0000;">Complete Production</button>
+    <button>Test Print</button>
   </div>
-
-  <div class="production-summary">
-    <div class="box">Cases to Produce: {{ casesToProduce }}</div>
-    <div class="box">Cases Produced: {{ casesProduced }}</div>
-    <div class="box">Cases Remaining: {{ casesRemaining }}</div>
-    <div class="box">% Remaining: {{ percentRemaining }}%</div>
-  </div>
-
-  <div class="details">
-    <p><strong>Item ID:</strong> {{ itemId }}</p>
-    <p><strong>Item Name:</strong> {{ itemName }}</p>
-    <p><strong>Lot ID:</strong> {{ lotId }}</p>
-    <p><strong>Cases Per Pallet:</strong> {{ casesPerPallet }}</p>
-    <p><strong>Pallets Produced:</strong> {{ palletsProduced }}</p>
-    <p><strong>Missing Labels:</strong> {{ missingLabels }}</p>
-    <p><strong>Current Pallet Cases:</strong> {{ currentPalletCases }}</p>
-    <p><strong>QR Code Label Required:</strong> {{ qrCodeRequired ? 'Yes' : 'No' }}</p>
-  </div>
-
-  <div class="weekly-summary">
-    <div class="box">Scheduled This Week: {{ scheduledThisWeek }}</div>
-    <div class="box">Produced This Week: {{ producedThisWeek }}</div>
+  <div class="center-content">
+    <div class="main">
+      <div class="tabs">
+        <div class="active">Print/Verify</div>
+        <div>Events</div>
+        <div>Settings</div>
+        <div class="logo">Redzone Production Software</div>
+      </div>
+      <div class="status-bar">
+        <div class="status-box running">Print Service: Running</div>
+        <div class="status-box stopped">Palletizer: Stopped</div>
+        <div class="status-box running">Tape Sealer: Running</div>
+      </div>
+      <div class="content">
+        <div class="title">Current Production Order: 124542</div>
+        <div class="grid-4">
+          <div class="stat-box">
+            <div class="value">245</div>
+            <div class="label">Cases to Produce</div>
+          </div>
+          <div class="stat-box">
+            <div class="value">98</div>
+            <div class="label">Cases Produced</div>
+          </div>
+          <div class="stat-box">
+            <div class="value">147</div>
+            <div class="label">Cases Remaining</div>
+          </div>
+          <div class="stat-box">
+            <div class="value">60%</div>
+            <div class="label">% Remaining</div>
+          </div>
+        </div>
+        <div class="grid-2">
+          <div class="detail-box">
+            <div>Item ID: 196530</div>
+            <div>Item Name: 5" Flour Tortilla Gordita</div>
+            <div>Lot ID: 124542</div>
+            <div>Cases Per Pallet: 48</div>
+            <div>Pallets Produced: 2</div>
+          </div>
+          <div class="detail-box">
+            <div>Missing Label Quantity: 0</div>
+            <div>Current Pallet Case Quantity: 2</div>
+            <div class="checkbox">
+              <input type="checkbox" checked disabled>
+              <label>Is QR Code Label Required?</label>
+            </div>
+          </div>
+        </div>
+        <div class="footer-grid">
+          <div class="footer-box">
+            <div class="label">Cases Scheduled - This Week</div>
+            <div class="value">2,629</div>
+          </div>
+          <div class="footer-box">
+            <div class="label">Cases Produced - This Week</div>
+            <div class="value">1,862</div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
